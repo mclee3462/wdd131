@@ -8,7 +8,7 @@ function changeTheme() {
         logo.src = 'images/byui-logo_white.png'; 
     } else {
         body.classList.remove('dark'); 
-        logo.src = 'images/byui-logo_blue.webp'; 
+        logo.src = 'images\byui-logo_blue.webp'; 
     }
 }
 
