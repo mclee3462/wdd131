@@ -5,10 +5,10 @@ const logo = document.querySelector('.logo img');
 function changeTheme() {
     if (themeSelector.value === 'dark') {
         body.classList.add('dark'); 
-        logo.src = 'path/to/white-logo.png'; 
+        logo.src = 'images/byui-logo_white.png'; 
     } else {
         body.classList.remove('dark'); 
-        logo.src = 'path/to/blue-logo.png'; 
+        logo.src = 'images/byui-logo_blue.png'; 
     }
 }
 

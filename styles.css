@@ -47,3 +47,26 @@ ul {
 .logo img {
     width: 150px;
 }
+
+body {
+    background-color: white;
+    color: black;
+}
+
+h2 {
+    color: #006EB6; 
+}
+
+/* Dark Theme */
+body.dark {
+    background-color: #333;
+    color: white;
+}
+
+body.dark h2 {
+    color: #87CEEB; 
+}
+
+body.dark a {
+    color: lightblue;
+}
