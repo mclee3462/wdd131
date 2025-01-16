@@ -5,7 +5,7 @@ const logo = document.querySelector('.logo img');
 function changeTheme() {
     if (themeSelector.value === 'dark') {
         body.classList.add('dark'); 
-        logo.src = 'images/byui-logo_white.png'; 
+        logo.src = 'images/byui-logo_white.webp'; 
     } else {
         body.classList.remove('dark'); 
         logo.src = 'images/byui-logo_blue.png'; 
