@@ -3,32 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mission Statement</title>
+    <meta name="description" content="Portfolio showcasing various web development projects">
+    <meta name="author" content="Michael Lee">
+    <title>My Web Development Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="mission.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <select>
-            <option value="light">Light</option>
-            <option value="dark">Dark</option>
-        </select>
-        
-        <h1>MISSION STATEMENT</h1>
-        <h2>BRIGHAM YOUNG UNIVERSITY-IDAHO</h2>
-        <p>
-            Brigham Young University-Idaho was founded and is supported and guided by The Church of Jesus Christ of Latter-day Saints. Its mission is to develop disciples of Jesus Christ who are leaders in their homes, the Church, and their communities.
-        </p>
-        <p><strong>The university does this by:</strong></p>
-        <ul>
-            <li>Building testimonies of the restored gospel of Jesus Christ and fostering its principles in a wholesome academic, cultural, and social environment.</li>
-            <li>Providing a high-quality education that prepares students of diverse interests and abilities for lifelong learning and employment.</li>
-            <li>Serving as many students as possible within resource constraints.</li>
-            <li>Delivering education that is affordable for students and the Church.</li>
-        </ul>
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h1>MISSION STATEMENT</h1>
+            <h2>BRIGHAM YOUNG UNIVERSITY-IDAHO</h2>
+            <p>
+                Brigham Young University-Idaho was founded and is supported and guided by The Church of Jesus Christ of Latter-day Saints. Its mission is to develop disciples of Jesus Christ who are leaders in their homes, the Church, and their communities.
+            </p>
+            <p><strong>The university does this by:</strong></p>
+            <ul>
+                <li>Building testimonies of the restored gospel of Jesus Christ and fostering its principles in a wholesome academic, cultural, and social environment.</li>
+                <li>Providing a high-quality education that prepares students of diverse interests and abilities for lifelong learning and employment.</li>
+                <li>Serving as many students as possible within resource constraints.</li>
+                <li>Delivering education that is affordable for students and the Church.</li>
+            </ul>
+        </section>
         <div class="logo">
             <img src="images/byui-logo_blue.webp" alt="BYU Idaho Logo">
         </div>
-    </div>
-    <script src="mission.js" defer></script>
+        <section>
+            <select id="themeSelector">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+            </select>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <ul>
+                <li>Project 1: <a href="project1.html">View Details</a></li>
+                <li>Project 2: <a href="project2.html">View Details</a></li>
+                <li>Project 3: <a href="project3.html">View Details</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Michael Lee. All rights reserved.</p>
+    </footer>
 </body>
 </html>
