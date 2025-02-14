@@ -49,3 +49,31 @@ document.addEventListener('DOMContentLoaded', () => {
         articlesContainer.appendChild(articleElement);
     });
 });
+
+function generateArticles() {
+    const articleContainer = document.querySelector("#article-container");
+
+    if (!articleContainer) {
+        console.error("Error: Article container not found!");
+        return;
+    }
+
+    articles.forEach(article => {
+        const newArticle = document.createElement("article");
+        newArticle.classList.add("blog-post");
+
+        newArticle.innerHTML = `
+            <h2>${article.title}</h2>
+            <p><strong>${article.date}</strong></p>
+            <img src="${article.imgSrc}" alt="${article.imgAlt}">
+            <p>${article.description}</p>
+            <p><strong>Genre:</strong> ${article.genre} | <strong>Ages:</strong> ${article.ages}</p>
+            <p>${article.stars}</p>
+        `;
+
+        articleContainer.appendChild(newArticle);
+    });
+}
+
+// Run the function after the DOM has loaded
+document.addEventListener("DOMContentLoaded", generateArticles);
