@@ -47,12 +47,10 @@ nav ul li a {
 
 article {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    grid-template-columns: 1fr 3fr; 
+    align-items: center; 
 }
+
 
 .article-details {
     font-weight: bold;
@@ -92,8 +90,8 @@ footer {
 }
 
 .post-meta {
-    text-align: right;
-    font-size: 1.2em; /* Increased font size for date */
+    font-size: 1em; /* More balanced */
+    color: #7a7a7a; /* Lighter for contrast */
 }
 
 .post-content {
@@ -105,11 +103,22 @@ footer {
 }
 
 .post-image {
-    display: block;
-    margin: 10px auto; /* Center image */
-    max-width: 200px;
+    width: 150px; /* Fixed width */
+    height: auto; /* Ensures proportional scaling */
 }
 
 .post-description {
     line-height: 1.4; /* Reduce space between lines */
+}
+
+@media (max-width: 768px) {
+    .blog-container {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+    article {
+        grid-template-columns: 1fr; /* Stack image and text */
+    }
+    .post-meta {
+        text-align: left; /* Prevents awkward right alignment */
+    }
 }
