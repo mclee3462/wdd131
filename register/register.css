@@ -1,11 +1,16 @@
-body {
+body{
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
+    width: 90%;
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
@@ -16,6 +21,7 @@ body {
 
 h1, h2 {
     color: #333;
+    text-align: center;
 }
 
 fieldset {
@@ -24,16 +30,19 @@ fieldset {
     margin-bottom: 20px;
     background: #e9ecef;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 label {
     display: block;
     margin-top: 10px;
     font-weight: bold;
+    text-align: left;
 }
 
 input[type="text"], input[type="number"], input[type="date"] {
-    width: 100%;
+    width: calc(100% - 20px);
     padding: 8px;
     margin-top: 5px;
     border: 1px solid #ccc;
@@ -50,6 +59,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    margin-top: 10px;
 }
 
 button:hover {
@@ -60,10 +70,21 @@ button:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
+    align-items: center;
+}
+
+.participant label {
+    grid-column: 1 / span 1;
+}
+
+.participant input {
+    grid-column: 2 / span 1;
 }
 
 .add-btn-container {
     grid-column: span 2;
+    display: flex;
+    justify-content: center;
 }
 
 .summary {
@@ -73,4 +94,5 @@ button:hover {
     color: #155724;
     border: 1px solid #c3e6cb;
     border-radius: 5px;
+    text-align: center;
 }
