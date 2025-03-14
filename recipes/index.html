@@ -3,44 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Delicious Recipes">
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content="Discover tasty recipes with easy steps.">
-    <meta property="og:image" content="images/recipe-book.png">
-    <meta property="og:url" content="https://yourwebsite.com">
-    <meta name="twitter:card" content="summary_large_image">
     <title>Delicious Recipes</title>
-    <link rel="stylesheet" href="recipes.css">
-    <link rel="Javascript" href="recipes.js">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <img src="images/recipe-book.png" alt="Recipe Book Logo">
         <h1>Delicious Recipes</h1>
-        <form class="search-form">
-            <input type="text" placeholder="Search recipes...">
-            <button type="submit">Search</button>
+        <form id="search-form">
+            <input type="text" id="search-input" placeholder="Search recipes...">
+            <button type="submit" id="search-btn">Search</button>
         </form>
     </header>
-    
-    <main>
-        <section class="recipe">
-            <h2>Spaghetti Carbonara</h2>
-            <img src="images/spaghetti-and-meatballs.webp" alt="Spaghetti Carbonara">
-            <div class="rating" role="img" aria-label="Rating: 4 out of 5 stars">
-                <span aria-hidden="true" class="icon-star">⭐</span>
-                <span aria-hidden="true" class="icon-star">⭐</span>
-                <span aria-hidden="true" class="icon-star">⭐</span>
-                <span aria-hidden="true" class="icon-star">⭐</span>
-                <span aria-hidden="true" class="icon-star-empty">☆</span>
-            </div>
-            <p class="description">A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper.</p>
-        </section>
+    <main id="recipes-container">
+        <!-- Recipes will be dynamically inserted here -->
     </main>
-    
-    <footer>
-        <p>Recipe icons created by <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Freepik - Flaticon</a></p>
-        </div>
-    </footer>
+    <script type="module" src="recipes.js"></script>
 </body>
 </html>

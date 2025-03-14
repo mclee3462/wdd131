@@ -1,54 +1,79 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const recipeContainer = document.querySelector(".recipe");
-    const searchForm = document.querySelector(".search-form");
+import recipes from './recipes.mjs';
 
-    // Example recipe data
-    const recipes = [
-        {
-            title: "Spaghetti Carbonara",
-            image: "images/spaghetti.jpg",
-            rating: 4,
-            description: "A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper."
-        },
-        {
-            title: "Chicken Alfredo",
-            image: "images/chicken-alfredo.jpg",
-            rating: 5,
-            description: "Creamy Alfredo sauce with grilled chicken over fettuccine pasta."
-        }
-    ];
+// Function to generate a random number from 0 to num-1
+function getRandomNumber(num) {
+    return Math.floor(Math.random() * num);
+}
 
-    function displayRecipe(recipe) {
-        recipeContainer.innerHTML = `
-            <h2>${recipe.title}</h2>
-            <img src="${recipe.image}" alt="${recipe.title}">
-            <div class="rating" role="img" aria-label="Rating: ${recipe.rating} out of 5 stars">
-                ${generateStars(recipe.rating)}
-            </div>
-            <p class="description">${recipe.description}</p>
-        `;
+// Function to get a random entry from an array
+function getRandomListEntry(arr) {
+    return arr[getRandomNumber(arr.length)];
+}
+
+// Function to generate rating stars HTML
+function ratingTemplate(rating) {
+    let html = `<span class="rating" role="img" aria-label="Rating: ${rating} out of 5 stars">`;
+    for (let i = 1; i <= 5; i++) {
+        html += i <= rating 
+            ? `<span aria-hidden="true" class="icon-star">⭐</span>` 
+            : `<span aria-hidden="true" class="icon-star-empty">☆</span>`;
     }
+    html += `</span>`;
+    return html;
+}
 
-    function generateStars(rating) {
-        let stars = "";
-        for (let i = 1; i <= 5; i++) {
-            stars += `<span aria-hidden="true" class="${i <= rating ? 'icon-star' : 'icon-star-empty'}">⭐</span>`;
-        }
-        return stars;
-    }
+// Function to generate tags HTML
+function tagsTemplate(tags) {
+    return tags.map(tag => `<li>${tag}</li>`).join('');
+}
 
-    searchForm.addEventListener("submit", (event) => {
-        event.preventDefault();
-        const query = event.target.querySelector("input").value.toLowerCase();
-        const foundRecipe = recipes.find(recipe => recipe.title.toLowerCase().includes(query));
+// Function to generate HTML for a recipe
+function recipeTemplate(recipe) {
+    return `
+    <figure class="recipe">
+        <img src="${recipe.image}" alt="Image of ${recipe.name}" />
+        <figcaption>
+            <ul class="recipe__tags">${tagsTemplate(recipe.tags)}</ul>
+            <h2>${recipe.name}</h2>
+            <p class="recipe__ratings">${ratingTemplate(recipe.rating)}</p>
+            <p class="recipe__description">${recipe.description}</p>
+        </figcaption>
+    </figure>`;
+}
 
-        if (foundRecipe) {
-            displayRecipe(foundRecipe);
-        } else {
-            recipeContainer.innerHTML = "<p>No recipes found.</p>";
-        }
-    });
+// Function to render a list of recipes
+function renderRecipes(recipeList) {
+    const outputElement = document.querySelector("#recipes-container");
+    outputElement.innerHTML = recipeList.map(recipeTemplate).join('');
+}
 
-    // Display the first recipe by default
-    displayRecipe(recipes[0]);
-});
+// Initialize the page with a random recipe
+function init() {
+    const recipe = getRandomListEntry(recipes);
+    renderRecipes([recipe]);
+}
+
+// Function to filter recipes based on user input
+function filterRecipes(query) {
+    const filtered = recipes.filter(recipe => 
+        recipe.name.toLowerCase().includes(query) ||
+        recipe.description.toLowerCase().includes(query) ||
+        recipe.tags.some(tag => tag.toLowerCase().includes(query)) ||
+        recipe.ingredients.some(ingredient => ingredient.toLowerCase().includes(query))
+    );
+    return filtered.sort((a, b) => a.name.localeCompare(b.name));
+}
+
+// Search event handler
+function searchHandler(e) {
+    e.preventDefault();
+    const searchInput = document.querySelector("#search-input").value.trim().toLowerCase();
+    const results = filterRecipes(searchInput);
+    renderRecipes(results);
+}
+
+// Attach event listener to the search form
+document.querySelector("#search-form").addEventListener("submit", searchHandler);
+
+// Run the init function on page load
+init();
