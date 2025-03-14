@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delicious Recipes</title>
+    <title>Recipe List</title>
     <link rel="stylesheet" href="recipes.css">
 </head>
 <body>
     <header>
-        <h1>Delicious Recipes</h1>
+        <h1>Recipe Finder</h1>
         <form id="search-form">
-            <input type="text" id="search-input" placeholder="Search recipes...">
-            <button type="submit" id="search-btn">Search</button>
+            <input type="text" id="search-input" placeholder="Search for recipes..." />
+            <button type="submit">Search</button>
         </form>
     </header>
-    <main id="recipes-container">
-        <!-- Recipes will be dynamically inserted here -->
+
+    <main>
+        <section class="recipes">
+            <!-- Recipes will be inserted dynamically here -->
+        </section>
     </main>
-    <script type="module" src="recipies.mjs"></script>
+
+    <script src="recipes.js" type="module"></script>
 </body>
 </html>

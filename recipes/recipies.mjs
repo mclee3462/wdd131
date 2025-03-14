@@ -4,7 +4,7 @@ const recipes = [
         description: "A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper.",
         tags: ["Pasta", "Italian", "Dinner"],
         rating: 4,
-        image: "image/spaghetti-and-meatballs.webp",
+        image: "images/spaghetti-and-meatballs.webp",
         ingredients: ["spaghetti", "eggs", "cheese", "pancetta", "pepper"]
     },
     {
