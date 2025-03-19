@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     registrationForm.addEventListener('submit', (event) => {
         event.preventDefault();
         const totalFees = calculateTotalFees();
-        const adultName = document.getElementById('adultName').value;
+        const adultName = document.getElementById('firstName1').value;
         registrationForm.classList.add('hide');
         summaryDiv.classList.remove('hide');
         summaryDiv.innerHTML = successTemplate({
