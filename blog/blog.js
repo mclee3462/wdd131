@@ -77,3 +77,4 @@ function generateArticles() {
 
 // Run the function after the DOM has loaded
 document.addEventListener("DOMContentLoaded", generateArticles);
+
