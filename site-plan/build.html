@@ -5,49 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Build a PC | Mike's PC Build and Repair</title>
     <link rel="stylesheet" href="style.css">
-    
+</head>
 
-<header>
-    <h1>Build Your Own PC</h1>
-</header>
+<body>
 
-<div class="content">
-    <h2>Step-by-Step Guide</h2>
-
-    <div class="step">
-        <h3>1. Choose Your Components</h3>
-        <p>Make sure all parts are compatible.</p>
-    </div>
-
-    <div class="step">
-        <h3>2. Assemble the Hardware</h3>
-        <p>Install the CPU, RAM, GPU, and connect the power supply.</p>
-    </div>
-
-    <div class="step">
-        <h3>3. Install the Operating System</h3>
-        <p>Use a bootable USB drive to install your preferred OS.</p>
-    </div>
-
-    <h2>PC Component Picker</h2>
-    <div class="picker">
-        <label for="cpu">Select CPU:</label>
-        <select id="cpu">
-            <option>Intel i7</option>
-            <option>Intel i9</option>
-            <option>AMD Ryzen 7</option>
-            <option>AMD Ryzen 9</option>
-        </select>
-
-        <label for="gpu">Select GPU:</label>
-        <select id="gpu">
-            <option>NVIDIA RTX 3060</option>
-            <option>NVIDIA RTX 4080</option>
-            <option>AMD RX 6700 XT</option>
-            <option>AMD RX 7900 XTX</option>
-        </select>
-    </div>
-</div>
 <header>
     <h1>Build Your Own PC</h1>
     <nav>
@@ -56,9 +17,25 @@
     </nav>
 </header>
 
+<div class="content">
+    <h2>Choose Your Components</h2>
+    
+    <div class="step">
+        <h3>1. Choose a CPU</h3>
+        <select id="cpu"></select>
+    </div>
+
+    <div class="step">
+        <h3>2. Choose a GPU</h3>
+        <select id="gpu"></select>
+    </div>
+</div>
+
 <footer>
     <p>&copy; 2025 Mike's PC Build and Repair</p>
 </footer>
+
+<script src="compute.js" defer></script>
 
 </body>
 </html>

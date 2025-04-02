@@ -3,50 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PC Building Site Plan</title>
+    <title>Expert PC Builds & Repairs</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>PC Building Site Plan</h1>
-    </header>
-    <main>
-        <section id="purpose">
-            <h2>Purpose</h2>
-            <p>This website will guide users through the process of building a PC, from choosing components to assembly and troubleshooting. It will serve as a resource for both beginners and experienced builders.</p>
-        </section>
-        <section id="audience">
-            <h2>Audience</h2>
-            <p>The primary audience includes gaming enthusiasts, content creators, and tech-savvy individuals looking to build their own PCs.</p>
-        </section>
-        <section id="dynamic-elements">
-            <h2>Dynamic Elements</h2>
-            <p>The site will include an interactive PC parts picker, component compatibility checker, and a FAQ section with collapsible answers.</p>
-        </section>
-        <section id="logo">
-            <h2>Logo</h2>
-            <img src="images/Logo.png" alt="Logo">
-        </section>
-        <section id="colors-fonts">
-            <h2>Colors and Fonts</h2>
-            <p><strong>Colors:</strong> Dark blue, gray, and neon green for a techy look.</p>
-            <p><strong>Fonts:</strong> Roboto and Montserrat for readability and a modern feel.</p>
-        </section>
-        <section id="content">
-            <h2>Content</h2>
-            <p>Pages will include guides, step-by-step instructions, recommended PC builds, and troubleshooting tips.</p>
-        </section>
-        <section id="wireframes">
-            <h2>Wireframes</h2>
-            <img src="images/wireframe.png" alt="wireframe">
-        </section>
-    </main>
-    <header>
-        <h1>Build Your Own PC</h1>
+        <div class="logo">Mike's PC</div>
         <nav>
             <a href="index.html">Home</a>
-            <a href="build.html">Build a PC</a>
+            <a href="build.html">Build Guide</a>
         </nav>
     </header>
+    
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Navigation</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="build.html">Build Guide</a></li>
+            </ul>
+        </aside>
+        
+        <main>
+            <section id="home" class="hero">
+                <img src="images/Logo.png" alt="PC Build">
+                <h1>Expert PC Builds & Repairs</h1>
+            </section>
+            
+            <section id="build-guide">
+                <h2>Build Guide</h2>
+                <p>Step-by-step guides to building your own PC.</p>
+            </section>
+            
+            <section id="recommended-builds">
+                <h2>Recommended Builds</h2>
+                <div class="build-options">
+                    <div class="build">
+                        <h3>Gaming Build</h3>
+                        <p>High-performance PC for gaming.</p>
+                    </div>
+                    <div class="build">
+                        <h3>Editing Build</h3>
+                        <p>Optimized for video and photo editing.</p>
+                    </div>
+                    <div class="build">
+                        <h3>Office Build</h3>
+                        <p>Reliable and efficient for office work.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Mike's PC Builds. All rights reserved.</p>
+    </footer>
 </body>
 </html>
